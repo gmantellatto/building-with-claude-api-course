@@ -1,0 +1,89 @@
+# =========================
+# Sistema Operacional
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# =========================
+# Editores / IDEs
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# =========================
+# Variáveis de ambiente / Segredos
+# =========================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Node.js
+# =========================
+node_modules/
+dist/
+build/
+.npm
+.eslintcache
+.next/
+out/
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# =========================
+# Java / Kotlin
+# =========================
+*.class
+target/
+*.jar
+*.war
+.gradle/
+
+# =========================
+# Arquivos temporários / Backup
+# =========================
+*.tmp
+*.bak
+*.old
+*.orig
+
+# =========================
+# Compactados
+# =========================
+*.zip
+*.tar.gz
+*.rar
