@@ -1,0 +1,14 @@
+[
+  {
+    "task": "Extract the AWS account ID from an ARN string like 'arn:aws:s3:::my-bucket/path/to/object'",
+    "format": "regex"
+  },
+  {
+    "task": "Parse an AWS CloudWatch log entry and extract the timestamp, log level, and message into a structured format",
+    "format": "python"
+  },
+  {
+    "task": "Create a JSON configuration object for an AWS Lambda function that includes runtime, timeout, memory size, and environment variables",
+    "format": "json"
+  }
+]
