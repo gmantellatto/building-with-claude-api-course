@@ -1,0 +1,17 @@
+[
+  {
+    "task": "Parse an AWS CloudFormation template and extract all resource logical IDs that are of type 'AWS::S3::Bucket'",
+    "format": "python",
+    "solution_criteria": "Solution should return a list of logical IDs for all S3 bucket resources. Should handle JSON-formatted templates and gracefully handle missing or empty resources sections."
+  },
+  {
+    "task": "Create a JSON configuration object for an AWS Lambda function that sets up environment variables for database connection (host, port, username) and execution role ARN",
+    "format": "json",
+    "solution_criteria": "JSON object should include proper structure with Environment.Variables section, valid ARN format for role, and all three database connection parameters with reasonable placeholder values."
+  },
+  {
+    "task": "Write a regular expression that matches valid AWS S3 bucket names according to AWS naming rules (3-63 characters, lowercase letters, numbers, hyphens, no consecutive hyphens, no hyphens at start/end)",
+    "format": "regex",
+    "solution_criteria": "Regex should validate S3 bucket names according to all AWS constraints: length 3-63, only lowercase alphanumeric and hyphens, no leading/trailing hyphens, no consecutive hyphens. Should match valid names and reject invalid ones."
+  }
+]
