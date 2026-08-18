@@ -1,0 +1,65 @@
+[
+  {
+    "output": "# Nutrition Plan for Strength & Muscle Gain\n\n## Daily Caloric Intake\n- **Target: 2,800\u20133,100 calories/day** (slight surplus for muscle gain)\n- Adjust based on progress over 2-3 weeks\n\n## Macronutrient Distribution\n\n| Macro | Daily Target | Per Meal |\n|-------|-------------|----------|\n| **Protein** | 170\u2013190g (2.0\u20132.2g/lb) | 25\u201335g per meal |\n| **Carbs** | 350\u2013420g | Time-concentrated around workouts |\n| **Fat** | 85\u2013105g | Distributed throughout day |\n\n## Meal Timing Strategy\n\n### Pre-Workout (1.5\u20132 hours before)\n- 40g carbs + 20g protein + minimal fat\n- *Example: 2 slices whole grain toast + 2 tbsp almond butter*\n\n### Post-Workout (Within 30\u201360 mins) \u2014 **Priority**\n- 40\u201350g fast carbs + 30\u201340g protein\n- *Example: Banana + protein shake with Greek yogurt*\n\n### Regular Meals (3 main + 1\u20132 snacks)\n- Breakfast, lunch, dinner: ~35g protein each\n- 1\u20132 protein snacks between meals\n\n## Best Protein Sources\n- Chicken, turkey, lean beef\n- Fish & salmon (omega-3 bonus)\n- Eggs, Greek yogurt, cottage cheese\n- Whey protein powder\n- Legumes (chickpeas, lentils)\n\n## Carb Sources\n- Oats, rice, potatoes, whole grain bread\n- Fruits (especially post-workout)\n\n## Important Notes\n- **Train consistently** \u2014 nutrition won't maximize gains without progressive overload\n- Track weight weekly; adjust calories if not gaining 0.5\u20131 lb/week\n- Stay hydrated (3\u20134L water daily)\n\nWould you like a sample day of eating?",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178",
+        "weight": "85",
+        "goal": "Maximize strength and muscle gain through optimized protein distribution and post-workout recovery nutrition",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan spans exactly 1 day with 4-5 meals",
+        "Protein distributed evenly across meals (minimum 30g per meal)",
+        "Includes dedicated post-workout meal with carbohydrates and protein within 2 hours of training",
+        "Total daily protein meets or exceeds 2.2g per kilogram of body weight"
+      ],
+      "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a strength/power athlete (weightlifter) with specific macronutrient ratios (high protein), ensuring the plan emphasizes protein distribution across meals and includes recovery nutrition post-workout"
+    },
+    "score": 3,
+    "reasoning": "The solution violates multiple mandatory requirements. While it provides excellent nutritional guidance and macronutrient targets that meet the secondary criteria, it fundamentally fails to deliver what was requested: a compact, concise 1-day meal plan with 4-5 meals including exact foods, portions, and timing. Instead, it provides a general framework and asks the user if they want a sample day. The task explicitly requires a meal plan to be written, not a template with an offer to create one. Additionally, the daily caloric total is not definitively stated (only a range), and no actual meal sequence for a full day is provided."
+  },
+  {
+    "output": "# Nutrition Plan for 120km Cycling Endurance\n\n## Daily Calorie Needs\n- **Base requirement**: ~2,400-2,600 kcal (BMI ~21.5, moderate activity)\n- **With training**: 2,800-3,200+ kcal depending on workout intensity\n\n## Key Macronutrient Targets\n\n**Carbohydrates (55-60% of calories)**\n- 340-380g daily\n- Critical for glycogen stores and sustained energy\n- Focus on complex carbs: oats, quinoa, brown rice, whole grain bread\n\n**Protein (1.2-1.6g per kg bodyweight)**\n- 80-110g daily\n- Plant sources: lentils, chickpeas, tofu, tempeh, hemp seeds, pea protein powder\n\n**Fats (20-25% of calories)**\n- 60-80g daily\n- Nuts, seeds, avocado, olive oil, coconut oil\n\n## Pre-Event & Training Fueling\n\n| Timing | Food Examples |\n|--------|--------------|\n| **3-4 hours before** | Pasta with marinara, rice with beans, sweet potato |\n| **1-2 hours before** | Banana with almond butter, energy bar, dates |\n| **During (120km)** | Dates, energy gels (vegan), sports drink, energy bars |\n| **Post-ride** | Smoothie (plant milk, banana, protein powder), rice bowl |\n\n## Endurance-Specific Foods\n- **Energy**: Dates, dried fruit, maple syrup\n- **Recovery**: Soy milk, tofu, lentils, nutritional yeast\n- **Hydration**: Electrolyte drinks with sodium\n\nConsider consulting a sports dietitian for personalized race-day strategy.",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178",
+        "weight": "68",
+        "goal": "Endurance performance for 120km cycling event",
+        "restrictions": "Vegan, no animal products"
+      },
+      "solution_criteria": [
+        "Meal plan covers one full day with breakfast, lunch, dinner, and snacks",
+        "All meals are vegan with plant-based protein sources (legumes, nuts, seeds, tofu)",
+        "Includes adequate carbohydrates for endurance cycling fuel and recovery",
+        "Addresses key micronutrient gaps (B12, iron, omega-3) through food sources or supplementation notes"
+      ],
+      "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a sport-specific dietary constraint (vegan endurance cyclist), validating that the meal plan meets performance nutritional needs while accommodating plant-based protein sources and addressing potential micronutrient gaps"
+    },
+    "score": 3,
+    "reasoning": "The solution provides excellent nutritional guidance and framework for an endurance cyclist, with accurate caloric needs, appropriate macronutrient targets, and vegan protein sources. However, it fundamentally fails to meet the mandatory requirements. The task explicitly requires 'meals with exact foods, portions, and timing' and a 'daily caloric total' with 'macronutrient breakdown.' The solution provides only general categories and targets rather than an actual meal plan. It reads as a nutrition guide rather than a concrete 1-day meal plan. Additionally, it fails to address micronutrient gaps (B12, iron, omega-3) as required by the secondary criteria. These are critical omissions that violate the mandatory requirements."
+  },
+  {
+    "output": "# Marathon Training Nutrition Plan\n\n## Pre-Run Meal (2-3 hours before 10am run)\n**Eat at ~7-7:30am:**\n- **2-3 cups cooked oatmeal** with banana and honey\n- **1-2 slices whole grain toast** with peanut butter\n- **Glass of orange juice or sports drink**\n- Small amount of water\n\n**Target: 600-800 calories, 100-150g carbs, moderate protein**\n\n## During the Run (20km = ~2 hours)\n- **Sports drink** (6-8% carbs): 500-750ml\n- **Energy gels or chews**: 1-2 gels every 45 minutes\n- Water as needed\n\n## Post-Run Recovery (within 30-60 min)\n- **Chocolate milk** or smoothie (protein + carbs)\n- Banana with Greek yogurt\n- Light meal within 2 hours\n\n---\n\n## Daily Macros for Marathon Training\nBased on your stats (BMI ~21.5, athletic build):\n\n| Nutrient | Daily Target |\n|----------|--------------|\n| **Calories** | 2,800-3,200 |\n| **Carbs** | 55-65% (385-520g) |\n| **Protein** | 15-20% (105-160g) |\n| **Fat** | 20-25% |\n\n**Key priorities:** High-quality carbs, adequate protein for recovery, hydration, and consistent fueling.",
+    "test_case": {
+      "prompt_inputs": {
+        "height": "178",
+        "weight": "68",
+        "goal": "Marathon training - high-endurance athlete requiring carbohydrate loading and sustained energy for 20km long run scheduled for 10am",
+        "restrictions": "None"
+      },
+      "solution_criteria": [
+        "Meal plan provides 3000+ calories with carbohydrates comprising 55-65% of total energy intake",
+        "Pre-training meal (2-3 hours before 10am run) is easily digestible with carbs and minimal fat/fiber",
+        "Post-training meal includes protein and carbohydrates for recovery within 30-60 minutes of completion",
+        "Plan is compact and fits within a single day format with 3-4 meals/snacks"
+      ],
+      "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+      "scenario": "Testing with a high-endurance athlete (marathon runner) requiring high calorie intake and carbohydrate loading, verifying the meal plan balances energy needs with digestibility timing around training windows"
+    },
+    "score": 3,
+    "reasoning": "The solution violates multiple mandatory requirements. While it provides macronutrient targets and some meal timing, it fails to: (1) include a complete daily meal plan with 3-4 meals/snacks as required, (2) state an explicit daily caloric total, and (3) provide actual macronutrient breakdowns for the meals listed. The plan only covers the run-specific nutrition (pre/during/post) but omits the rest of the day's meals needed to reach 3000+ calories. The mandatory requirement explicitly states the output must include 'Meals with exact foods, portions, and timing' - this is only partially met for the pre-run meal, with the rest of the day unspecified."
+  }
+]

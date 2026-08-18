@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "height": "178",
+      "weight": "85",
+      "goal": "Maximize strength and muscle gain through optimized protein distribution and post-workout recovery nutrition",
+      "restrictions": "None"
+    },
+    "solution_criteria": [
+      "Meal plan spans exactly 1 day with 4-5 meals",
+      "Protein distributed evenly across meals (minimum 30g per meal)",
+      "Includes dedicated post-workout meal with carbohydrates and protein within 2 hours of training",
+      "Total daily protein meets or exceeds 2.2g per kilogram of body weight"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a strength/power athlete (weightlifter) with specific macronutrient ratios (high protein), ensuring the plan emphasizes protein distribution across meals and includes recovery nutrition post-workout"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178",
+      "weight": "68",
+      "goal": "Endurance performance for 120km cycling event",
+      "restrictions": "Vegan, no animal products"
+    },
+    "solution_criteria": [
+      "Meal plan covers one full day with breakfast, lunch, dinner, and snacks",
+      "All meals are vegan with plant-based protein sources (legumes, nuts, seeds, tofu)",
+      "Includes adequate carbohydrates for endurance cycling fuel and recovery",
+      "Addresses key micronutrient gaps (B12, iron, omega-3) through food sources or supplementation notes"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a sport-specific dietary constraint (vegan endurance cyclist), validating that the meal plan meets performance nutritional needs while accommodating plant-based protein sources and addressing potential micronutrient gaps"
+  },
+  {
+    "prompt_inputs": {
+      "height": "178",
+      "weight": "68",
+      "goal": "Marathon training - high-endurance athlete requiring carbohydrate loading and sustained energy for 20km long run scheduled for 10am",
+      "restrictions": "None"
+    },
+    "solution_criteria": [
+      "Meal plan provides 3000+ calories with carbohydrates comprising 55-65% of total energy intake",
+      "Pre-training meal (2-3 hours before 10am run) is easily digestible with carbs and minimal fat/fiber",
+      "Post-training meal includes protein and carbohydrates for recovery within 30-60 minutes of completion",
+      "Plan is compact and fits within a single day format with 3-4 meals/snacks"
+    ],
+    "task_description": "Write a compact, concise 1 day meal plan for a single athlete",
+    "scenario": "Testing with a high-endurance athlete (marathon runner) requiring high calorie intake and carbohydrate loading, verifying the meal plan balances energy needs with digestibility timing around training windows"
+  }
+]
