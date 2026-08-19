@@ -1,0 +1,253 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">4</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">8.2 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">100.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a short, ambiguous passage where topic extraction could vary based on interpretation to evaluate whether the prompt produces consistent, reasonable results</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in machine learning have demonstrated significant applications across multiple domains. Neural networks trained on large datasets have improved natural language processing capabilities, enabling more accurate sentiment analysis and machine translation. However, concerns about algorithmic bias in training data have prompted researchers to develop fairness-aware machine learning techniques. Additionally, the computational costs associated with training large models raise questions about the environmental impact of artificial intelligence research and deployment.</td>
+                <td class="criteria">• Extracts all major topics covered in the passage<br>• Returns results as a valid JSON array of strings<br>• Demonstrates reasonable interpretation of topic boundaries in an ambiguous multi-topic passage</td>
+                <td class="output"><pre>```json
+[
+  "Machine learning advances",
+  "Neural networks",
+  "Natural language processing",
+  "Sentiment analysis",
+  "Machine translation",
+  "Algorithmic bias",
+  "Fairness-aware machine learning",
+  "Computational costs of training models",
+  "Environmental impact of artificial intelligence"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topic names and no extra commentary. It comprehensively extracts all major topics discussed in the passage. The topic boundaries are reasonably interpreted for this multi-topic passage. The only minor issues are stylistic consistency (one entry is slightly longer than others) and a debatable omission of 'training data' as a topic, but these do not constitute violations of the stated criteria.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a humanities passage containing overlapping themes (e.g., history, philosophy, cultural studies) to verify accurate disambiguation of related but distinct topics</td>
+                <td class="prompt-inputs"><strong>content:</strong> The Renaissance humanist movement fundamentally challenged medieval scholasticism by reviving classical Greek and Roman texts, yet this intellectual shift cannot be divorced from its socioeconomic context in Italian city-states where merchant patronage enabled cultural production. Scholars like Petrarch argued for a philosophy centered on human dignity and potential, contrasting sharply with theological determinism, while simultaneously, the printing press revolutionized knowledge dissemination and created new social hierarchies of literacy. This period witnessed the emergence of civic republicanism as a political philosophy, drawing on Cicero's writings to justify merchant oligarchies, even as traditional feudal structures persisted in rural areas. The tension between recovering pagan antiquity and maintaining Christian orthodoxy generated distinctive aesthetic and ethical frameworks that shaped both artistic practice and moral philosophy.</td>
+                <td class="criteria">• Extracts all major distinct topics without omitting overlapping themes (e.g., humanism, scholasticism, patronage, philosophy, printing technology, political theory, aesthetics, theology)<br>• Disambiguates related but separate concepts (e.g., distinguishes 'Renaissance humanism' from 'civic republicanism' and 'classical revival' from 'printing press technology')<br>• Returns output as a valid JSON array of strings with no extraneous fields</td>
+                <td class="output"><pre>```json
+[
+  "Renaissance humanism",
+  "Classical Greek and Roman texts",
+  "Medieval scholasticism",
+  "Italian city-states",
+  "Merchant patronage",
+  "Human dignity and potential",
+  "Petrarch",
+  "Theological determinism",
+  "Printing press",
+  "Literacy and social hierarchy",
+  "Civic republicanism",
+  "Cicero",
+  "Merchant oligarchies",
+  "Feudal structures",
+  "Pagan antiquity",
+  "Christian orthodoxy",
+  "Aesthetic frameworks",
+  "Moral philosophy"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extraneous fields or commentary. It meets the secondary criteria by extracting all major distinct themes and disambiguating overlapping concepts effectively. The inclusion of proper nouns (Petrarch, Cicero) is a minor weakness since these are historical figures rather than conceptual topics, though one could argue they represent important intellectual contributions. The omission of 'knowledge dissemination' as an explicit topic is a minor gap. Overall, the solution demonstrates strong comprehension of the passage's thematic content and provides a well-organized extraction of topics.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a technical STEM passage containing domain-specific jargon and acronyms to ensure the prompt extracts high-level concepts rather than just listing every technical term</td>
+                <td class="prompt-inputs"><strong>content:</strong> Recent advances in CRISPR-Cas9 gene editing have demonstrated significant improvements in off-target mitigation through modified sgRNA design and high-fidelity Cas9 variants. The mechanism relies on PAM (Protospacer Adjacent Motif) recognition followed by DNA unwinding and cleavage at the target locus. In vivo delivery via AAV (Adeno-Associated Virus) vectors presents challenges including packaging constraints and immunogenicity, while ex vivo approaches using electroporation in primary T cells have shown promise for CAR-T cell immunotherapy. Recent studies utilizing machine learning algorithms to predict off-target sites have reduced unintended mutations by 94%, though long-term epigenetic effects remain incompletely characterized. These developments have implications for treating monogenic disorders such as sickle cell disease and β-thalassemia, though regulatory frameworks for germline editing applications continue to evolve.</td>
+                <td class="criteria">• Extracts high-level concepts (e.g., 'gene editing', 'delivery methods', 'therapeutic applications') rather than listing every acronym or technical term<br>• Returns output as a JSON array of strings<br>• Avoids redundancy and captures distinct topics without duplication</td>
+                <td class="output"><pre>```json
+[
+  "CRISPR-Cas9 gene editing",
+  "Off-target mitigation",
+  "sgRNA design",
+  "High-fidelity Cas9 variants",
+  "PAM recognition",
+  "DNA unwinding and cleavage",
+  "AAV vector delivery",
+  "In vivo gene delivery",
+  "Packaging constraints",
+  "Immunogenicity",
+  "Ex vivo approaches",
+  "Electroporation",
+  "CAR-T cell immunotherapy",
+  "Machine learning for off-target prediction",
+  "Epigenetic effects",
+  "Monogenic disorders",
+  "Sickle cell disease",
+  "β-thalassemia",
+  "Germline editing regulation"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings with only topic names and no extra commentary. However, it has moderate deficiencies against the secondary criteria. The criteria explicitly request 'high-level concepts' rather than 'every acronym or technical term,' yet the solution includes several low-level implementation details (PAM recognition, DNA unwinding/cleavage, electroporation specifics) that could be abstracted to higher-level concepts. Additionally, there is some conceptual overlap that violates the 'avoid redundancy' criterion. The solution is functional and reasonably comprehensive, but doesn't fully optimize for the stated preference for abstraction and distinctness.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a multi-disciplinary passage that bridges fields (e.g., bioethics combining biology, medicine, and ethics) to verify the prompt captures cross-domain topics appropriately</td>
+                <td class="prompt-inputs"><strong>content:</strong> The emerging field of precision medicine raises profound ethical questions at the intersection of genomics, clinical practice, and social justice. Recent advances in CRISPR-based gene editing technologies enable targeted interventions for previously untreatable genetic disorders, yet the high costs of personalized treatment protocols risk exacerbating healthcare disparities between wealthy and underserved populations. Furthermore, the collection and analysis of large-scale genomic databases necessary for developing predictive biomarkers creates tensions between individual privacy rights and the public health benefits of population-level research, requiring robust regulatory frameworks that balance scientific innovation with informed consent principles and equitable access to therapeutic benefits.</td>
+                <td class="criteria">• Extracts topics spanning at least three distinct domains (e.g., medicine/genomics, ethics, and healthcare/social science)<br>• Captures both explicit topics (gene editing, biomarkers, privacy) and implicit cross-domain concepts (healthcare disparities, regulatory frameworks)<br>• Returns output as a valid JSON array of strings</td>
+                <td class="output"><pre>```json
+[
+  "Precision medicine",
+  "Genomics",
+  "CRISPR-based gene editing",
+  "Genetic disorders",
+  "Healthcare disparities",
+  "Genomic databases",
+  "Predictive biomarkers",
+  "Privacy rights",
+  "Public health research",
+  "Informed consent",
+  "Equitable access to treatment",
+  "Regulatory frameworks",
+  "Ethics in medicine"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It also meets the secondary criteria by spanning at least three distinct domains (genomics, ethics, healthcare/social science) and capturing both explicit topics (gene editing, biomarkers, privacy rights) and implicit cross-domain concepts (healthcare disparities, regulatory frameworks, equitable access). The extraction is comprehensive and well-organized. Minor weaknesses include slight redundancy in 'Ethics in medicine' and the omission of a few explicitly mentioned concepts, but these do not significantly detract from the overall quality of the response.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

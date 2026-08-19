@@ -1,0 +1,50 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in machine learning have demonstrated significant applications across multiple domains. Neural networks trained on large datasets have improved natural language processing capabilities, enabling more accurate sentiment analysis and machine translation. However, concerns about algorithmic bias in training data have prompted researchers to develop fairness-aware machine learning techniques. Additionally, the computational costs associated with training large models raise questions about the environmental impact of artificial intelligence research and deployment."
+    },
+    "solution_criteria": [
+      "Extracts all major topics covered in the passage",
+      "Returns results as a valid JSON array of strings",
+      "Demonstrates reasonable interpretation of topic boundaries in an ambiguous multi-topic passage"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a short, ambiguous passage where topic extraction could vary based on interpretation to evaluate whether the prompt produces consistent, reasonable results"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in CRISPR-Cas9 gene editing have demonstrated significant improvements in off-target mitigation through modified sgRNA design and high-fidelity Cas9 variants. The mechanism relies on PAM (Protospacer Adjacent Motif) recognition followed by DNA unwinding and cleavage at the target locus. In vivo delivery via AAV (Adeno-Associated Virus) vectors presents challenges including packaging constraints and immunogenicity, while ex vivo approaches using electroporation in primary T cells have shown promise for CAR-T cell immunotherapy. Recent studies utilizing machine learning algorithms to predict off-target sites have reduced unintended mutations by 94%, though long-term epigenetic effects remain incompletely characterized. These developments have implications for treating monogenic disorders such as sickle cell disease and \u03b2-thalassemia, though regulatory frameworks for germline editing applications continue to evolve."
+    },
+    "solution_criteria": [
+      "Extracts high-level concepts (e.g., 'gene editing', 'delivery methods', 'therapeutic applications') rather than listing every acronym or technical term",
+      "Returns output as a JSON array of strings",
+      "Avoids redundancy and captures distinct topics without duplication"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a technical STEM passage containing domain-specific jargon and acronyms to ensure the prompt extracts high-level concepts rather than just listing every technical term"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The Renaissance humanist movement fundamentally challenged medieval scholasticism by reviving classical Greek and Roman texts, yet this intellectual shift cannot be divorced from its socioeconomic context in Italian city-states where merchant patronage enabled cultural production. Scholars like Petrarch argued for a philosophy centered on human dignity and potential, contrasting sharply with theological determinism, while simultaneously, the printing press revolutionized knowledge dissemination and created new social hierarchies of literacy. This period witnessed the emergence of civic republicanism as a political philosophy, drawing on Cicero's writings to justify merchant oligarchies, even as traditional feudal structures persisted in rural areas. The tension between recovering pagan antiquity and maintaining Christian orthodoxy generated distinctive aesthetic and ethical frameworks that shaped both artistic practice and moral philosophy."
+    },
+    "solution_criteria": [
+      "Extracts all major distinct topics without omitting overlapping themes (e.g., humanism, scholasticism, patronage, philosophy, printing technology, political theory, aesthetics, theology)",
+      "Disambiguates related but separate concepts (e.g., distinguishes 'Renaissance humanism' from 'civic republicanism' and 'classical revival' from 'printing press technology')",
+      "Returns output as a valid JSON array of strings with no extraneous fields"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a humanities passage containing overlapping themes (e.g., history, philosophy, cultural studies) to verify accurate disambiguation of related but distinct topics"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The emerging field of precision medicine raises profound ethical questions at the intersection of genomics, clinical practice, and social justice. Recent advances in CRISPR-based gene editing technologies enable targeted interventions for previously untreatable genetic disorders, yet the high costs of personalized treatment protocols risk exacerbating healthcare disparities between wealthy and underserved populations. Furthermore, the collection and analysis of large-scale genomic databases necessary for developing predictive biomarkers creates tensions between individual privacy rights and the public health benefits of population-level research, requiring robust regulatory frameworks that balance scientific innovation with informed consent principles and equitable access to therapeutic benefits."
+    },
+    "solution_criteria": [
+      "Extracts topics spanning at least three distinct domains (e.g., medicine/genomics, ethics, and healthcare/social science)",
+      "Captures both explicit topics (gene editing, biomarkers, privacy) and implicit cross-domain concepts (healthcare disparities, regulatory frameworks)",
+      "Returns output as a valid JSON array of strings"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a multi-disciplinary passage that bridges fields (e.g., bioethics combining biology, medicine, and ethics) to verify the prompt captures cross-domain topics appropriately"
+  }
+]
